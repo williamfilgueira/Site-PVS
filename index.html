@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PVS — Artefatos de Concreto</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#top" class="logo">
+          <span class="logo-bold">PVS</span>
+          <span class="logo-sub">Artefatos de Concreto</span>
+        </a>
+
+        <button
+          class="hamburger"
+          aria-label="Abrir menu"
+          aria-controls="site-menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+
+        <nav class="menu" id="site-menu" aria-label="Menu principal">
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#orcamento">Orçamento</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <!-- CTA para MOBILE  -->
+            <li class="mobile-only">
+              <a href="#orcamento" class="btn">Solicitar Orçamento</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a href="#orcamento" class="btn">Solicitar Orçamento</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <!-- HERO -->
+    <section id="inicio" class="hero" aria-label="Destaque">
+      <div class="container hero-inner">
+        <h1 class="hero-title">
+          Soluções em Artefatos de Concreto para sua Obra
+        </h1>
+
+        <p class="hero-sub">
+          Qualidade, resistência e entrega rápida em toda a região.
+          <br />
+          Mais de 20 anos transformando projetos em realidade.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#produtos" class="btn">Conheça Nossos Produtos →</a>
+          <a href="#orcamento" class="btn ghost">Solicitar Orçamento</a>
+        </div>
+
+        <ul class="hero-metrics" aria-label="Indicadores">
+          <li>
+            <strong>20+</strong>
+            <span>Anos de Experiência</span>
+          </li>
+          <li>
+            <strong>1000+</strong>
+            <span>Obras Realizadas</span>
+          </li>
+          <li>
+            <strong>24h</strong>
+            <span>Atendimento</span>
+          </li>
+          <li>
+            <strong>100%</strong>
+            <span>Qualidade Garantida</span>
+          </li>
+        </ul>
+
+        <a href="#sobre" class="hero-down" aria-label="Descer para conteúdo"
+          >﹀</a
+        >
+      </div>
+    </section>
+
+    <footer class="site-footer" id="contato" aria-labelledby="footer-title">
+      <div class="container footer-grid">
+        <section class="footer-brand" aria-label="Sobre a PVS">
+          <h2 id="footer-title" class="sr-only">Rodapé</h2>
+          <a href="#top" class="logo footer-logo">
+            <span class="logo-bold">PVS</span>
+            <span class="logo-sub">Artefatos de Concreto</span>
+          </a>
+
+          <p class="footer-about">
+            Mais de 20 anos oferecendo soluções em artefatos de concreto para
+            construção civil, com qualidade, resistência e pontualidade.
+          </p>
+
+          <ul class="footer-contact">
+            <li>
+              <span class="ic">📍</span>
+              Rua da Indústria, 123 – Cidade/SP
+            </li>
+            <li>
+              <span class="ic">📞</span>
+              <a href="tel:+551134567890">(11) 3456-7890</a>
+            </li>
+            <li>
+              <span class="ic">✉️</span>
+              <a href="mailto:vendas@pvsartefatos.com.br"
+                >vendas@pvsartefatos.com.br</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <nav class="footer-col" aria-label="Links Rápidos">
+          <h3 class="footer-title">Links Rápidos</h3>
+          <ul class="footer-list">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#diferenciais">Diferenciais</a></li>
+            <li><a href="#orcamento">Orçamento</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Nossos Produtos">
+          <h3 class="footer-title">Nossos Produtos</h3>
+          <ul class="footer-list">
+            <li><a href="#produtos">Tubos de Concreto</a></li>
+            <li><a href="#produtos">Anéis de Concreto</a></li>
+            <li><a href="#produtos">Canaletas</a></li>
+            <li><a href="#produtos">Guias e Mini Guias</a></li>
+            <li><a href="#produtos">Mourões</a></li>
+            <li><a href="#produtos">Caixas de Inspeção</a></li>
+          </ul>
+        </nav>
+
+        <section class="footer-col" aria-label="Siga-nos">
+          <h3 class="footer-title">Siga-nos</h3>
+
+          <div class="social-row">
+            <a
+              class="social-btn"
+              href="#"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5C8.1 2 7.6 2 6.3 2.1 5 2.2 4 2.4 3.2 3.2 2.4 4 2.2 5 2.1 6.3 2 7.6 2 8.1 2 12s0 4.4.1 5.7c.1 1.3.3 2.3 1.1 3.1.8.8 1.8 1 3.1 1.1C8.1 22 8.6 22 12 22s4.4 0 5.7-.1c1.3-.1 2.3-.3 3.1-1.1.8-.8 1-1.8 1.1-3.1.1-1.3.1-1.8.1-5.7s0-4.4-.1-5.7c-.1-1.3-.3-2.3-1.1-3.1-.8-.8-1.8-1-3.1-1.1C16.4 2 15.9 2 12 2Zm0 3.2c3.9 0 4.4 0 5.9.1 1 .1 1.6.3 2 .6.5.4.8 1 .9 2 .1 1.5.1 2 .1 6s0 4.4-.1 5.9c-.1 1-.4 1.6-.9 2-.4.3-1 .5-2 .6-1.5.1-2 .1-5.9.1s-4.4 0-5.9-.1c-1-.1-1.6-.3-2-.6-.5-.4-.8-1-.9-2C3.2 16.4 3.2 15.9 3.2 12s0-4.4.1-5.9c.1-1 .4-1.6.9-2 .4-.3 1-.5 2-.6 1.5-.1 2-.1 5.9-.1Zm5.2 1.6a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4Z"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="social-btn"
+              href="#"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13 22v-9h3l.5-3H13V8.2c0-.9.3-1.5 1.6-1.5H17V4.1C16.6 4 15.5 4 14.3 4 11.9 4 10 5.7 10 8.8V10H7v3h3v9h3Z"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="social-btn"
+              href="#"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M6.9 6.5A2.4 2.4 0 1 1 7 1.8a2.4 2.4 0 0 1 0 4.7ZM3.9 22h6V9.2h-6V22Zm8-12.8V22h6v-7c0-3.7-2-5.4-4.7-5.4-2 0-3.1 1.1-3.6 2v-2.4h-1.7Z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-hours">
+            <p class="hours-title">Horário de Funcionamento:</p>
+            <p>Segunda à Sexta: 7h às 17h</p>
+            <p>Sábado: 7h às 12h</p>
+            <p>Plantão 24h emergências</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>
+            © 2024 PVS Artefatos de Concreto. Todos os direitos reservados.
+            <span class="cnpj">CNPJ: 00.000.000/0001-00</span>
+          </p>
+          <nav class="footer-legal" aria-label="Links legais">
+            <a href="#politica">Política de Privacidade</a>
+            <a href="#termos">Termos de Uso</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="app.js"></script>
+</html>
