@@ -1,0 +1,73 @@
+[
+  {
+    "id": "tubos",
+    "titulo": "Tubos de Concreto",
+    "imagem": "assets/produtos/tubos.png",
+    "descricao": "Para drenagem e canalização. Versões simples ou armadas, tipo ponta e bolsa.",
+    "tags": ["Drenagem", "Canalização"]
+  },
+  {
+    "id": "aneis",
+    "titulo": "Anéis de Concreto",
+    "imagem": "assets/produtos/aneis.png",
+    "descricao": "Aplicações em poços, fossas, cisternas e reservatórios de águas pluviais.",
+    "tags": ["Poços", "Fossas", "Cisternas"]
+  },
+  {
+    "id": "canaletas",
+    "titulo": "Canaletas",
+    "imagem": "assets/produtos/canaleta-meia-cana.png",
+    "descricao": "Drenagem superficial, armadas ou simples, em vários tamanhos e profundidades.",
+    "tags": ["Drenagem", "Superficial"]
+  },
+  {
+    "id": "guias",
+    "titulo": "Guias & Mini Guias",
+    "imagem": "assets/produtos/guias.png",
+    "descricao": "Delimitação e contenção de pisos em calçadas, ciclovias e estacionamentos.",
+    "tags": ["Pavimentação"]
+  },
+  {
+    "id": "mouroes",
+    "titulo": "Mourões",
+    "imagem": "assets/produtos/mouroes.png",
+    "descricao": "Concreto armado com treliças e furos para fixação. Ideal para cercas.",
+    "tags": ["Cercamento"]
+  },
+  {
+    "id": "pisos",
+    "titulo": "Pisos & Pisograma",
+    "imagem": "assets/produtos/piso-pisograma.png",
+    "descricao": "Peças modulares intertravadas para grandes áreas, com baixa manutenção.",
+    "tags": ["Intertravado", "Estacionamentos"]
+  },
+  {
+    "id": "meia-cana",
+    "titulo": "Canaletas Meia-Cana",
+    "imagem": "assets/produtos/canaleta-meia-cana.png",
+    "descricao": "Escoamento eficiente e prevenção de erosões em taludes e valetas.",
+    "tags": ["Taludes", "Erosão"]
+  },
+  {
+    "id": "caixas",
+    "titulo": "Caixas",
+    "imagem": "assets/produtos/caixas.png",
+    "descricao": "Com/sem fundo e tampa: passagem/inspeção elétrica, telefônica e pluvial.",
+    "tags": ["Inspeção", "Infraestrutura"]
+  },
+  {
+    "id": "tampas",
+    "titulo": "Tampas",
+    "imagem": "assets/produtos/tampas.png",
+    "descricao": "Concreto armado para poços, fossas, bocas de lobo e canais.",
+    "tags": ["Cobertura"]
+  },
+  {
+    "id": "fossas",
+    "titulo": "Fossas Sépticas",
+    "imagem": "assets/produtos/fossas.png",
+    "descricao": "Solução para locais sem saneamento. Dimensionamento conforme NBR 7229.",
+    "tags": ["Tratamento", "NBR 7229"]
+  }
+]
+
