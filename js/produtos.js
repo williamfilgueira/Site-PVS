@@ -1,7 +1,6 @@
 const GRID = document.getElementById("cards");
 const DATA_URL = "data/produtos.json";
 
-// skeletons (efeito carregando)
 function renderSkeletons(qtd = 6) {
   GRID.innerHTML = Array.from({ length: qtd }).map(() => `
     <article class="card is-loading" aria-busy="true">
@@ -15,7 +14,6 @@ function renderSkeletons(qtd = 6) {
   `).join("");
 }
 
-// card HTML
 function cardTemplate(p) {
   const tags = (p.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
   return `
@@ -34,7 +32,6 @@ function cardTemplate(p) {
   `;
 }
 
-// init
 async function init() {
   try {
     renderSkeletons();
@@ -59,4 +56,4 @@ async function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-console.log("Dados de produtos carregados com sucesso.");
+console.log("ENtrei em produtos.");

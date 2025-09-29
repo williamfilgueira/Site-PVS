@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "slug": "diametro-ideal-tubo",
+      "title": "Como escolher o diâmetro ideal do tubo de concreto",
+      "subtitle": "Guia prático com exemplos de dimensionamento para drenagem urbana e rural.",
+      "excerpt": "Entenda os critérios de vazão, declividade e rugosidade para definir o diâmetro certo.",
+      "date": "2025-09-20",
+      "readTime": 6,
+      "author": "Equipe PVS",
+      "tags": ["Drenagem", "Tubos"],
+      "cover": "assets/blog/tubos-concreto.jpg",
+      "alt": "Tubos de concreto empilhados no pátio",
+      "contentHtml": "<h2>Introdução</h2><p>Selecionar corretamente o diâmetro evita alagamentos e retrabalhos. Neste guia, usamos a <em>equação de Manning</em> como base.</p><h3>1) Vazão de projeto</h3><p>Levante a vazão máxima esperada considerando área de contribuição, coeficiente de escoamento e intensidade de chuva.</p><ul><li>Defina o período de retorno adequado.</li><li>Considere ocupação do solo.</li></ul><h3>2) Declividade</h3><p>Declividades muito baixas aumentam o risco de assoreamento; muito altas podem causar erosão.</p><h3>3) Norma</h3><p>Atente-se às normas ABNT aplicáveis ao produto e à instalação.</p><p><strong>Conclusão:</strong> combine vazão, declividade e restrições de obra para escolher o diâmetro com segurança.</p>"
+    },
+    {
+      "slug": "canaletas-instalacao",
+      "title": "Canaletas: quando usar e como instalar",
+      "subtitle": "Passo a passo de instalação e boas práticas para escoamento superficial.",
+      "excerpt": "Veja base, alinhamento e travamento para garantir desempenho e durabilidade.",
+      "date": "2025-09-12",
+      "readTime": 5,
+      "author": "PVS Engenharia",
+      "tags": ["Canaletas", "Obra"],
+      "cover": "assets/blog/canaletas.png",
+      "alt": "Canaletas de concreto em estacionamento",
+      "contentHtml": "<p>As canaletas conduzem a água superficial para pontos de captação. <strong>Boas práticas:</strong></p><ul><li>Preparar sub-base compactada;</li><li>Assentar com argamassa nivelada;</li><li>Prever grelhas e inspeções;</li><li>Selar juntas conforme especificação.</li></ul>"
+    },
+    {
+      "slug": "normas-abnt-essenciais",
+      "title": "Normas ABNT essenciais para artefatos de concreto",
+      "subtitle": "Resumo das principais normas para tubos, anéis e guias.",
+      "excerpt": "Conheça a estrutura das normas e como impactam fabricação e inspeção.",
+      "date": "2025-08-29",
+      "readTime": 7,
+      "author": "Qualidade PVS",
+      "tags": ["ABNT", "Qualidade"],
+      "cover": "assets/blog/normas-abnt.png",
+      "alt": "Documento técnico com norma destacada",
+      "contentHtml": "<p>As normas garantem padronização e segurança. Consulte sempre as versões vigentes e relatórios de ensaio do fabricante.</p>"
+    }
+  ]
+}
