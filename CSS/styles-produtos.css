@@ -31,6 +31,7 @@
 .card .card-link {
   position: relative;
   z-index: 2;
+  
 }
 
 .card:hover {
@@ -74,7 +75,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 20px;}
+}
 .tag {
   font-size: 0.75rem;
   padding: 4px 10px;
@@ -90,9 +91,9 @@
   color: #2f4f4f;
   text-decoration: none;
   transition: color 0.2s;
+  margin-top: 20px;
+  display: inline-block;
 }
-
-
 
 .card-link:hover {
   color: #1e3d3d;
