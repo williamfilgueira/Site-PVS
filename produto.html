@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="CSS/styles.css" />
     <link rel="stylesheet" href="CSS/styles-produtos.css" />
+    <link rel="stylesheet" href="CSS/styles-produto.css" />
   </head>
   <body>
     <header class="header">
@@ -49,13 +50,64 @@
       </div>
     </header>
 
-    <main class="page produtos" id="produtos" aria-labelledby="produtos-title">
-      <section class="container">
-        <header class="page-head">
-          <h1 class="sub">Conheça nossa linha de artefatos de concreto.</h1>
-        </header>
+    <main class="page container" id="produto">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Início</a> › <a href="produtos.html">Produtos</a> ›
+        <span id="crumbAtual">Carregando…</span>
+      </nav>
 
-        <section class="cards-grid" id="cards"></section>
+      <section class="produto-wrap" id="produtoWrap" aria-busy="true">
+        <div class="produto-media" id="produtoMedia"></div>
+        <article class="produto-copy">
+          <header class="produto-head">
+            <h1 id="produtoTitulo">Carregando…</h1>
+            <p id="produtoDesc" class="muted"></p>
+            <div id="produtoTags" class="produto-tags"></div>
+          </header>
+
+          <section
+            aria-labelledby="specsTitle"
+            id="specsSec"
+            style="display: none"
+          >
+            <h2 id="specsTitle" class="specs-title">
+              Especificações
+              <button
+                class="icon-btn"
+                id="openSpecs"
+                aria-label="Abrir tabela de medidas"
+                title="Abrir tabela de medidas"
+              >
+                <img class="icon" src="assets/clipboard.png" alt="Ícone de clipboard" aria-hidden="true" />
+              </button>
+            </h2>
+
+            <div id="specsWrap" hidden></div>
+          </section>
+
+          <!-- MODAL -->
+          <dialog
+            class="modal"
+            id="specsModal"
+            aria-labelledby="specsModalTitle"
+          >
+            <div class="modal-backdrop" data-close></div>
+            <div class="modal-dialog">
+              <header class="modal-head">
+                <h3 id="specsModalTitle">Tabela de Medidas</h3>
+                <button class="modal-close" id="closeSpecs" aria-label="Fechar">
+                  ×
+                </button>
+              </header>
+              <div class="modal-body" id="specsModalBody"></div>
+              <footer class="modal-foot">
+                <button class="btn" id="closeSpecs2">Fechar</button>
+              </footer>
+            </div>
+          </dialog>
+
+          <a href="produtos.html" class="btn2 btn-outline btn-back">← Voltar</a>
+        </article>
       </section>
     </main>
 
@@ -183,5 +235,5 @@
     </footer>
   </body>
   <script src="js/mobile.js"></script>
-  <script src="js/produtos.js"></script>
+  <script src="js/produto.js"></script>
 </html>
