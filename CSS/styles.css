@@ -7,7 +7,7 @@
   --radius: 14px;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
   --hero-h: 100vh;
-  --hero-bg: url("/assets/tubulacao-hero.png");
+  --hero-bg: url("../assets/tubulacao-hero.png");
   --footer-bg: #0b0b0b;
   --footer-ink: #e6e6e6;
   --footer-muted: #a7a7a7;

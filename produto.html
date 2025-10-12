@@ -3,7 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PVS — Artefatos de Concreto</title>
+
+    <title id="meta-title">Produto - PVS Artefatos de Concreto</title>
+    <meta
+      id="meta-description"
+      name="description"
+      content="Artefatos de concreto conforme ABNT. Tubos, anéis, canaletas, guias e mais. Entrega rápida em Atibaia e região."
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+
+    <!-- Canonical: definido dinamicamente abaixo -->
+    <link
+      id="link-canonical"
+      rel="canonical"
+      href="https://pvsartefatosdeconcreto.com.br/produto.html"
+    />
+    <link
+      id="link-hreflang"
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://pvsartefatosdeconcreto.com.br/produto.html"
+    />
+
+    <!-- Open Graph / Twitter (valores serão atualizados via JS) -->
+    <meta property="og:type" content="product" />
+    <meta
+      id="og-title"
+      property="og:title"
+      content="Produto - PVS Artefatos de Concreto"
+    />
+    <meta
+      id="og-description"
+      property="og:description"
+      content="Artefatos de concreto conforme ABNT."
+    />
+    <meta
+      id="og-url"
+      property="og:url"
+      content="https://pvsartefatosdeconcreto.com.br/produto.html"
+    />
+    <meta
+      id="og-image"
+      property="og:image"
+      content="https://pvsartefatosdeconcreto.com.br/assets/og-produto.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      id="tw-title"
+      name="twitter:title"
+      content="Produto - PVS Artefatos de Concreto"
+    />
+    <meta
+      id="tw-description"
+      name="twitter:description"
+      content="Artefatos de concreto conforme ABNT."
+    />
+    <meta
+      id="tw-image"
+      name="twitter:image"
+      content="https://pvsartefatosdeconcreto.com.br/assets/og-produto.jpg"
+    />
+
+    <!-- Fonts & CSS -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -17,17 +81,172 @@
     <link rel="stylesheet" href="CSS/styles.css" />
     <link rel="stylesheet" href="CSS/styles-produtos.css" />
     <link rel="stylesheet" href="CSS/styles-produto.css" />
+
+    <!-- JSON-LD Product (placeholder; será sobrescrito via JS com os dados do item) -->
+    <script type="application/ld+json" id="ld-product">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Produto PVS",
+        "description": "Artefatos de concreto conforme ABNT.",
+        "image": [
+          "https://pvsartefatosdeconcreto.com.br/assets/og-produto.jpg"
+        ],
+        "brand": { "@type": "Brand", "name": "PVS Artefatos de Concreto" },
+        "url": "https://pvsartefatosdeconcreto.com.br/produto.html",
+        "category": "Artefatos de concreto",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "0.00",
+          "priceCurrency": "BRL"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD Breadcrumb -->
+    <script type="application/ld+json" id="ld-breadcrumb">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://pvsartefatosdeconcreto.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://pvsartefatosdeconcreto.com.br/produtos.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Produto",
+            "item": "https://pvsartefatosdeconcreto.com.br/produto.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Script que ajusta TITLE/DESC/OG/CANONICAL com base no slug do produto -->
+    <script>
+      (function () {
+        // Obtém slug (?slug=tubos-de-concreto) – ajuste se usar outra rota
+        const params = new URLSearchParams(location.search);
+        const slug = (params.get("slug") || "").trim();
+
+        // Se houver slug, defina URLs canônicas únicas
+        const canonicalUrl = slug
+          ? `https://pvsartefatosdeconcreto.com.br/produto.html?slug=${encodeURIComponent(
+              slug
+            )}`
+          : `https://pvsartefatosdeconcreto.com.br/produto.html`;
+
+        document
+          .getElementById("link-canonical")
+          .setAttribute("href", canonicalUrl);
+        document
+          .getElementById("link-hreflang")
+          .setAttribute("href", canonicalUrl);
+        document.getElementById("og-url").setAttribute("content", canonicalUrl);
+
+        // Este bloco espera que produto.js preencha window.__produto (nome, desc, img)
+        window.addEventListener("pvs:produtoCarregado", function () {
+          const p = window.__produto || {};
+          const title = p.titulo
+            ? `${p.titulo} - PVS Artefatos de Concreto`
+            : "Produto - PVS Artefatos de Concreto";
+          const desc = p.descricao || "Artefatos de concreto conforme ABNT.";
+          const img =
+            p.imagemAbs ||
+            p.imagem ||
+            "https://pvsartefatosdeconcreto.com.br/assets/og-produto.jpg";
+
+          // Title/Description
+          document.title = title;
+          document
+            .getElementById("meta-description")
+            .setAttribute("content", desc);
+
+          // Open Graph / Twitter
+          document.getElementById("og-title").setAttribute("content", title);
+          document
+            .getElementById("og-description")
+            .setAttribute("content", desc);
+          document.getElementById("og-image").setAttribute("content", img);
+          document.getElementById("tw-title").setAttribute("content", title);
+          document
+            .getElementById("tw-description")
+            .setAttribute("content", desc);
+          document.getElementById("tw-image").setAttribute("content", img);
+
+          // JSON-LD Product
+          const ld = {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: p.titulo || "Produto PVS",
+            description: desc,
+            image: [img],
+            brand: { "@type": "Brand", name: "PVS Artefatos de Concreto" },
+            url: canonicalUrl,
+            category: p.categoria || "Artefatos de concreto",
+          };
+          if (p.preco) {
+            ld.offers = {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              price: String(p.preco),
+              priceCurrency: "BRL",
+            };
+          }
+          document.getElementById("ld-product").textContent =
+            JSON.stringify(ld);
+
+          // Breadcrumb com nome do produto
+          const b = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Início",
+                item: "https://pvsartefatosdeconcreto.com.br/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Produtos",
+                item: "https://pvsartefatosdeconcreto.com.br/produtos.html",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: p.titulo || "Produto",
+                item: canonicalUrl,
+              },
+            ],
+          };
+          document.getElementById("ld-breadcrumb").textContent =
+            JSON.stringify(b);
+        });
+      })();
+    </script>
   </head>
   <!-- Botão  WhatsApp -->
-  <a
-    class="whats-fab pulse"
-    href="https://wa.me/5511913463319?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20vim%20pelo%20seu%20site!"
-    target="_blank"
-    aria-label="Conversar no WhatsApp"
-  >
-    <img class="icon" src="assets/whatsapp2.png" alt="WhatsApp" />
-  </a>
   <body>
+    <a
+      class="whats-fab pulse"
+      href="https://wa.me/5511913463319?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%2C%20vim%20pelo%20seu%20site!"
+      target="_blank"
+      aria-label="Conversar no WhatsApp"
+    >
+      <img class="icon" src="assets/whatsapp2.png" alt="WhatsApp" />
+    </a>
     <header class="header">
       <div class="container nav">
         <a href="index.html" class="logo">
@@ -52,7 +271,7 @@
             <li><a href="index.html#sobre">Sobre Nós</a></li>
             <li><a href="produtos.html">Produtos</a></li>
             <li><a href="index.html#contato">Contato</a></li>
-            <li><a href="blog.html#blog">Blog</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li class="mobile-only">
               <a href="#contato" class="btn">Solicitar Orçamento</a>
             </li>
@@ -169,7 +388,6 @@
             <li><a href="#inicio">Início</a></li>
             <li><a href="#sobre">Sobre Nós</a></li>
             <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
