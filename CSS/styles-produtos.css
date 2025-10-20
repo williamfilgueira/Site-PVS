@@ -1,131 +1,238 @@
-.page-head {
-  text-align: center;
-  margin: 50px;
+:root {
+  --header-h: 72px;
+  --bg: #ffffff;
+  --ink: #0f172a;
+  --muted: #475569;
+  --brand: #159e10;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  --hero-h: 100vh;
+  --hero-bg: url("../assets/tubulacao-hero.png");
+  --footer-bg: #0b0b0b;
+  --footer-ink: #e6e6e6;
+  --footer-muted: #a7a7a7;
+  --footer-line: rgba(255, 255, 255, 0.08);
+  --fab-size: 56px;
+  --fab-right: 18px;
+  --fab-bottom: 18px;
+  --fab-bg: #25d366;
+  --fab-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  --fab-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+/* Grid de produtos */
+.prod-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
 }
 
-.cards-grid {
+/* Card */
+.product-card {
+  background: #fff;
+  border-radius: var(--radius, 14px);
+  box-shadow: var(--shadow, 0 10px 30px rgba(15, 23, 42, 0.12));
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.16);
+}
+
+.product-card__link {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin: 32px 0 64px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.product-card__media {
+  aspect-ratio: 16/10;
+  background: #f3f4f6;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product-card__body {
+  padding: 14px 16px 16px;
+}
+.product-card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 2px 0 6px;
+  color: var(--ink, #0f172a);
+}
+.product-card__desc {
+  color: var(--muted, #475569);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  min-height: 44px; /* segura duas linhas */
+}
+
+.product-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.product-card .tag {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.product-card__cta {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--brand, #159e10);
+}
+
+.section-title {
+  text-align: center;
+}
+#lista-produtos {
   padding: 0 50px;
 }
 
-.card {
-  position: relative;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+.cta-row {
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card-link-cover {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.card .card-link {
-  position: relative;
-  z-index: 2;
-  
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
-}
-
-.card-media {
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  background: #f1f3f5;
-}
-.card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-.card:hover .card-media img {
-  transform: scale(1.05);
-}
-
-.card-copy {
-  padding: 18px 16px 22px;
-}
-.card-copy h3 {
-  font-size: 1.1rem;
-  margin: 0 0 8px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-.card-copy p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-  margin: 0 0 12px;
-}
-
-.tags {
-  display: flex;
+  gap: 20px;
   flex-wrap: wrap;
-  gap: 8px;
+  /* justify-content: space-around */
 }
-.tag {
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  background: #f3f4f6;
-  color: #374151;
-  border-radius: 999px;
+
+@media (max-width: 503px) {
+  .cta-row {
+    justify-content: space-around;
+  }
+  .product-desc {
+    text-align: center;
+  }
+  .product-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    font-size: 10px;
+    padding: 0;
+    color: var(--brand);
+  }
+}
+
+.product-tags {
+  color: var(--brand);
+}
+
+.container-especificacoes {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+}
+
+.container.cta-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 50px;
+}
+
+.container,
+h3 {
+  margin: 0;
+}
+
+/* 0) Segurança geral: nada estoura a viewport */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+} /* evita aquela faixa branca */
+
+/* 1) Scroll horizontal só dentro do wrapper da tabela */
+.table-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* scroll lateral */
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius, 14px);
+  background: #fff;
+  margin: 10px 0 16px;
+  text-align: center;
+  padding: 50px;
+}
+
+/* 2) A tabela em si pode ser maior que a tela para habilitar o scroll */
+.spec-table {
+  border-collapse: collapse;
+  width: max-content; /* usa a largura do conteúdo */
+  min-width: 640px; /* ajuste se quiser menor/maior */
+  font-size: 0.95rem;
+}
+
+/* células não quebram números/medidas */
+.spec-table th,
+.spec-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  text-align: left;
   white-space: nowrap;
 }
 
-.card-link {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #2f4f4f;
-  text-decoration: none;
-  transition: color 0.2s;
-  margin-top: 20px;
-  display: inline-block;
-}
-
-.card-link:hover {
-  color: #1e3d3d;
-  text-decoration: underline;
-}
-
-.card.is-loading {
-  pointer-events: none;
-}
-.card.is-loading .card-media,
-.skeleton {
-  background: linear-gradient(90deg, #eee 25%, #f6f6f6 37%, #eee 63%);
-  background-size: 400% 100%;
-  animation: shimmer 1.2s infinite;
-}
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
+/* 3) Evita qualquer “efeito colateral” do sticky em telas pequenas */
+@media (max-width: 640px) {
+  .spec-table thead th {
+    position: static;
   }
 }
-.skeleton.line {
-  height: 12px;
-  border-radius: 6px;
-  margin: 10px 0;
+
+/* 4) Nenhuma mídia força overflow */
+img,
+svg,
+table {
+  max-width: 100%;
+  height: auto;
 }
-.skeleton.line.lg {
-  height: 16px;
-  margin-top: 0;
-}
-.skeleton.line.short {
-  width: 60%;
+
+/* ===== Centralizar tabela no desktop ===== */
+@media (min-width: 734px) {
+  .table-wrap {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    overflow-x: visible; /* remove o scroll no desktop */
+    border: none; /* opcional: limpa a borda no desktop */
+    background: transparent; /* opcional: deixa o fundo transparente */
+  }
+
+  .spec-table {
+    min-width: auto; /* ocupa o espaço necessário */
+    width: auto; /* permite centralizar natural */
+    box-shadow: 0 0 24px rgba(15, 23, 42, 0.06);
+    border-radius: var(--radius, 14px);
+  }
 }

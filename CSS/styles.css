@@ -37,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+.link-menu{
+  color: var(--brand);
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -1183,6 +1187,9 @@ body.menu-open {
   background: var(--footer-bg);
   color: var(--footer-ink);
   padding-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-grid {
@@ -1298,10 +1305,11 @@ body.menu-open {
   padding: 14px 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   color: var(--footer-muted);
   font-size: 14px;
+  text-align: center;
 }
 .footer-bottom-inner a {
   color: var(--footer-ink);

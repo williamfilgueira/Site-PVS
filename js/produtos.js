@@ -1,87 +1,68 @@
-const GRID = document.getElementById("cards");
-const DATA_URL = "data/produtos.json";
+(function () {
+  const GRID_ID = "produtos-grid";
+  const JSON_URL = "data/produtos.json";
 
-function slugify(str = "") {
-  return String(str)
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
-}
+  const grid = document.getElementById(GRID_ID);
+  if (!grid) return;
 
-function renderSkeletons(qtd = 6) {
-  if (!GRID) return;
-  GRID.innerHTML = Array.from({ length: qtd })
-    .map(
-      () => `
-    <article class="card is-loading" aria-busy="true">
-      <figure class="card-media skeleton"></figure>
-      <div class="card-copy">
-        <div class="skeleton line lg"></div>
-        <div class="skeleton line"></div>
-        <div class="skeleton line short"></div>
-      </div>
-    </article>
-  `
-    )
-    .join("");
-}
+  const truncate = (txt, len = 140) =>
+    txt.length > len ? txt.slice(0, len - 1).trimEnd() + "…" : txt;
 
-function cardTemplate(p) {
-  const tags = (p.tags || [])
-    .map((t) => `<span class="tag">${t}</span>`)
-    .join("");
-  const slug = p.slug ? String(p.slug) : slugify(p.titulo);
-  const href = `produto.html?slug=${encodeURIComponent(slug)}`;
+  const renderTags = (tags = []) =>
+    tags
+      .slice(0, 3) // até 3 tags no card
+      .map((t) => `<span class="tag" aria-label="tag">${t}</span>`)
+      .join("");
 
-  return `
-    <article class="card">
-      <a class="card-link-cover" href="${href}" aria-label="Ver detalhes de ${
-    p.titulo
-  }"></a>
-      <figure class="card-media">
-        <img src="${p.imagem}" alt="${p.titulo}" loading="lazy"
-             onerror="this.onerror=null;this.src='assets/produtos/_fallback.png';" />
-      </figure>
-      <div class="card-copy">
-        <h3>${p.titulo}</h3>
-        <p>${p.descricao ?? ""}</p>
-        ${tags ? `<div class="tags">${tags}</div>` : ""}
-        <a href="${href}" class="card-link">Ver detalhes</a>
-      </div>
-    </article>
-  `;
-}
+  const pageFor = (slug) => `${slug}.html`;
 
-async function init() {
-   if (!GRID) {
-    console.debug("[produtos.js] #cards não encontrado: ignorando render nesta página.");
-    return;
-  }
-  try {
-    renderSkeletons();
-    const res = await fetch(DATA_URL, { cache: "no-cache" });
-    if (!res.ok) throw new Error(`Erro ao carregar ${DATA_URL}`);
-    const produtos = await res.json();
+  const onImgError = (ev) => {
+    ev.currentTarget.alt = ev.currentTarget.alt || "Imagem do produto";
+    ev.currentTarget.decoding = "async";
+    ev.currentTarget.src = "assets/placeholder-produto.png"; // opcional: crie esse placeholder
+  };
 
-    if (!Array.isArray(produtos) || produtos.length === 0) {
-      GRID.innerHTML = `<p style="grid-column:1/-1">Nenhum produto cadastrado no momento.</p>`;
-      return;
-    }
+  const makeCard = (p) => {
+    const href = pageFor(p.slug);
+    const desc = truncate(p.descricao || "");
+    const tags = renderTags(p.tags);
 
-    GRID.innerHTML = produtos.map(cardTemplate).join("");
-  } catch (e) {
-    console.error(e);
-    if (GRID) {
-      GRID.innerHTML = `
-        <div class="alert" role="status">
+    return `
+      <article class="product-card" id="${p.id}">
+        <a class="product-card__link" href="${href}" aria-label="Ver ${p.titulo}">
+          <div class="product-card__media">
+            <img src="${p.imagem}"
+                 alt="${p.titulo}"
+                 loading="lazy"
+                 width="480"
+                 height="320"
+                 onerror="this.onerror=null; this.src='assets/placeholder-produto.png';" />
+          </div>
+          <div class="product-card__body">
+            <h2 class="product-card__title">${p.titulo}</h2>
+            <p class="product-card__desc">${desc}</p>
+            <div class="product-card__tags">${tags}</div>
+            <span class="product-card__cta" aria-hidden="true">Ver detalhes →</span>
+          </div>
+        </a>
+      </article>
+    `;
+  };
+
+  fetch(JSON_URL, { cache: "no-store" })
+    .then((r) => {
+      if (!r.ok) throw new Error("Falha ao carregar produtos.json");
+      return r.json();
+    })
+    .then((lista) => {
+      if (!Array.isArray(lista)) throw new Error("JSON inválido");
+      grid.innerHTML = lista.map(makeCard).join("");
+    })
+    .catch((err) => {
+      console.error(err);
+      grid.innerHTML = `
+        <div class="alert error">
           Não foi possível carregar os produtos agora. Tente novamente mais tarde.
-        </div>
-      `;
-    }
-  }
-}
-
-document.addEventListener("DOMContentLoaded", init);
-console.log("Página de produtos carregada.");
+        </div>`;
+    });
+})();
