@@ -19,14 +19,13 @@
   --fab-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
   --fab-shadow-hover: 0 14px 28px rgba(0, 0, 0, 0.22);
 }
-/* Grid de produtos */
+
 .prod-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 22px;
 }
 
-/* Card */
 .product-card {
   background: #fff;
   border-radius: var(--radius, 14px);
@@ -75,7 +74,7 @@
   font-size: 0.95rem;
   line-height: 1.45;
   margin: 0 0 10px;
-  min-height: 44px; /* segura duas linhas */
+  min-height: 44px;
 }
 
 .product-card__tags {
@@ -134,6 +133,7 @@
 }
 
 .product-tags {
+  padding: 0 5px;
   color: var(--brand);
 }
 
@@ -153,6 +153,7 @@
   flex-direction: column;
   align-items: center;
   margin: 50px 50px;
+  text-align: center;
 }
 
 .container,
@@ -160,7 +161,6 @@ h3 {
   margin: 0;
 }
 
-/* 0) Segurança geral: nada estoura a viewport */
 *,
 *::before,
 *::after {
@@ -170,14 +170,12 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-} /* evita aquela faixa branca */
-
-/* 1) Scroll horizontal só dentro do wrapper da tabela */
+}
 .table-wrap {
   display: block;
   width: 100%;
   max-width: 100%;
-  overflow-x: auto; /* scroll lateral */
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: var(--radius, 14px);
@@ -187,15 +185,13 @@ body {
   padding: 50px;
 }
 
-/* 2) A tabela em si pode ser maior que a tela para habilitar o scroll */
 .spec-table {
   border-collapse: collapse;
-  width: max-content; /* usa a largura do conteúdo */
-  min-width: 640px; /* ajuste se quiser menor/maior */
+  width: max-content;
+  min-width: 640px;
   font-size: 0.95rem;
 }
 
-/* células não quebram números/medidas */
 .spec-table th,
 .spec-table td {
   padding: 10px 12px;
@@ -204,14 +200,12 @@ body {
   white-space: nowrap;
 }
 
-/* 3) Evita qualquer “efeito colateral” do sticky em telas pequenas */
 @media (max-width: 640px) {
   .spec-table thead th {
     position: static;
   }
 }
 
-/* 4) Nenhuma mídia força overflow */
 img,
 svg,
 table {
@@ -219,19 +213,22 @@ table {
   height: auto;
 }
 
-/* ===== Centralizar tabela no desktop ===== */
+.tag {
+  list-style: none;
+}
+
 @media (min-width: 734px) {
   .table-wrap {
     display: flex;
-    justify-content: center; /* centraliza horizontalmente */
-    overflow-x: visible; /* remove o scroll no desktop */
-    border: none; /* opcional: limpa a borda no desktop */
-    background: transparent; /* opcional: deixa o fundo transparente */
+    justify-content: center;
+    overflow-x: visible;
+    border: none;
+    background: transparent;
   }
 
   .spec-table {
-    min-width: auto; /* ocupa o espaço necessário */
-    width: auto; /* permite centralizar natural */
+    min-width: auto;
+    width: auto;
     box-shadow: 0 0 24px rgba(15, 23, 42, 0.06);
     border-radius: var(--radius, 14px);
   }

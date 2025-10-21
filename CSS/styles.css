@@ -571,6 +571,13 @@ body.menu-open {
   object-fit: cover;
 }
 
+
+@media (max-width: 980px) {
+  .product-image {
+    height: 650px;
+  }
+}
+
 .product-body {
   padding: 18px;
   display: grid;
@@ -1043,8 +1050,13 @@ body.menu-open {
   font-size: clamp(18px, 2.4vw, 22px);
 }
 .contact-cta .muted {
-  color: var(--muted);
-  margin: 0 0 10px;
+  color: var(--brand);
+  margin: 0 0 10px; 
+}
+
+.text-obs{
+  color: var(--brand);
+  font-size: 12px;
 }
 .cta-list {
   margin: 8px 0 14px;
