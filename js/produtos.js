@@ -19,7 +19,7 @@
   const onImgError = (ev) => {
     ev.currentTarget.alt = ev.currentTarget.alt || "Imagem do produto";
     ev.currentTarget.decoding = "async";
-    ev.currentTarget.src = "assets/placeholder-produto.png"; // opcional: crie esse placeholder
+    ev.currentTarget.src = "assets/placeholder-produto.png"; 
   };
 
   const makeCard = (p) => {
