@@ -167,8 +167,7 @@
 }
 .post-cover img {
   width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: contain;
+  object-fit: fill;
   border-radius: var(--radius, 16px);
   border: 1px solid var(--line, #e6ecf3);
   background: #dfe6ef;
